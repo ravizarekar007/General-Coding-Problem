@@ -1,7 +1,7 @@
 # General-Coding-Problem
-Software Camera Feasibility Check
 
-# How it works
+
+## How it works - Software Camera Feasibility Check
 
 We hardcode the desired ranges (distance 1–10, light 100–500).
 
@@ -19,18 +19,20 @@ Run any online js compiler to run code
 
 
 ```
+
 function checkSoftwareCameraFeasibility() {
   // Desired ranges for the software camera
   const desiredDistance = [1, 10];   // must support distances from 1 to 10
   const desiredLight = [100, 500];   // must support light levels from 100 to 500
 
-  // Hardware cameras with their ranges
+  // Hardware cameras with names and ranges
   const hardwareCameras = [
-    { distance: [1, 5], light: [100, 300] },
-    { distance: [6, 10], light: [200, 500] }
+    { name: "Canon CloseShot", distance: [1, 5], light: [100, 300] },
+    { name: "Nikon LongView", distance: [6, 10], light: [200, 500] },
+    { name: "Sony BrightLens", distance: [1, 10], light: [250, 500] }
   ];
 
-  // Simple check: go through each required distance and light level
+  // Check feasibility
   for (let dist = desiredDistance[0]; dist <= desiredDistance[1]; dist++) {
     for (let light = desiredLight[0]; light <= desiredLight[1]; light++) {
       let covered = false;
@@ -42,6 +44,7 @@ function checkSoftwareCameraFeasibility() {
           light >= cam.light[0] && light <= cam.light[1]
         ) {
           covered = true;
+          console.log(`Covered by: ${cam.name} (distance ${cam.distance}, light ${cam.light})`);
           break;
         }
       }
