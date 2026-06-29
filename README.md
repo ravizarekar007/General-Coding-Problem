@@ -9,7 +9,7 @@ We hardcode sample 3 hardware cameras with their ranges.
 
 The function checks every possible combination of distance and light level.
 
-If the combined coverage spans the entire desired range, it’s feasible, it prints feasible.
+A check for distance coverage & check for light coverage, it’s feasible, it prints feasible.
 
 If even one combination is missing, it prints not feasible.
 
