@@ -54,6 +54,7 @@ function checkSoftwareCameraFeasibility() {
     console.log(">✅ Distance range is fully covered.");
   } else {
     console.log(">❌ Distance range is NOT fully covered.");
+    console.log("Software camera is NOT feasible.");
     return false;
   }
 
@@ -74,6 +75,7 @@ function checkSoftwareCameraFeasibility() {
     console.log(">✅Light range is fully covered.");
   } else {
     console.log(">❌Light range is NOT fully covered.");
+    console.log("Software camera is NOT feasible.");
     return false;
   }
 
